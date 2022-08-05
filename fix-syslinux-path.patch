@@ -1,0 +1,24 @@
+diff --git a/bootiso b/bootiso
+index 494db63..ccd4d13 100755
+--- a/bootiso
++++ b/bootiso
+@@ -1325,13 +1325,15 @@ function asrt_checkSyslinuxInstall() {
+       "Your distribution doesn't ship 'extlinux' with the 'syslinux' package." \
+       "Please install 'extlinux' and try again."
+   fi
+-  st_foundSyslinuxBiosFolder=$(find "$ct_syslinuxLibRoot" -type d -path '*/bios' -print -quit)
+-  st_foundSyslinuxMbrBinary=$(fs_findFileFromPatterns "$ct_syslinuxLibRoot" 'bios/mbr.bin' 'mbr.bin')
+-  if [ -z "$st_foundSyslinuxBiosFolder" ]; then
++
++  st_foundSyslinuxBiosFolder="$ct_syslinuxLibRoot"
++  if [ ! -d "$st_foundSyslinuxBiosFolder" ]; then
+     ps_failAndExit MISSING_DEPENDENCY \
+       "Could not find a SYSLINUX bios folder containing c32 bios module files on this system."
+   fi
+-  if [ -z "$st_foundSyslinuxMbrBinary" ]; then
++
++  st_foundSyslinuxMbrBinary="$ct_syslinuxLibRoot/mbr.bin"
++  if [ ! -f "$st_foundSyslinuxMbrBinary" ]; then
+     ps_failAndExit MISSING_DEPENDENCY "Could not find a SYSLINUX MBR binary on this system."
+   fi
+ }

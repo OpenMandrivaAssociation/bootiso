@@ -1,0 +1,44 @@
+diff --git a/bootiso b/bootiso
+index 494db63..dfd01c3 100755
+--- a/bootiso
++++ b/bootiso
+@@ -877,8 +877,8 @@ typeset -Ar ct_commandPackages=(
+   [awk]='gawk'
+   [basename]='coreutils'
+   [bc]='bc'
+-  [blkid]='util-linux'
+-  [blockdev]='util-linux'
++  [blkid]='util-linux-core'
++  [blockdev]='util-linux-core'
+   [cat]='coreutils'
+   [chmod]='coreutils'
+   [column]='util-linux'
+@@ -902,11 +902,11 @@ typeset -Ar ct_commandPackages=(
+   [mount]='util-linux'
+   [mv]='coreutils'
+   [numfmt]='coreutils'
+-  [partx]='util-linux'
++  [partx]='util-linux-core'
+   [rsync]='rsync'
+   [rm]='coreutils'
+   [sed]='sed'
+-  [sfdisk]='' # Distro-dependent
++  [sfdisk]='util-linux'
+   [sha1sum]='coreutils'
+   [sha256sum]='coreutils'
+   [sha512sum]='coreutils'
+@@ -917,11 +917,11 @@ typeset -Ar ct_commandPackages=(
+   [syslinux]='syslinux'
+   [tail]='coreutils'
+   [tar]='tar'
+-  [tput]='' # Distro-dependent
++  [tput]='ncurses'
+   [tr]='coreutils'
+   [tty]='coreutils'
+-  [umount]='util-linux'
+-  ['wimlib-imagex']='' # Distro-dependent
++  [umount]='util-linux-core'
++  ['wimlib-imagex']='wimtools'
+   [wipefs]='util-linux'
+   [xargs]='findutils'
+ )
