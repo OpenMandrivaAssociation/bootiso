@@ -4,7 +4,7 @@
 Summary:  Script to securely create a bootable USB device
 Name:     bootiso
 Version:  4.2.0
-Release:  %mkrel 2
+Release:  3
 License:  GPLv3
 Group:    System/Kernel and hardware
 Url:      https://%{upstream}.github.io/%{name}
